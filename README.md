@@ -1,6 +1,6 @@
 # AI Readiness Skill
 
-A Claude Cowork skill that generates a complete suite of AI readiness files for any website — in a single command.
+A skill that generates a complete suite of AI readiness files for any website — in a single command. Works natively in **Claude Cowork** via the installable `.skill` file, and can also be used as a prompt system in **any other AI assistant** via `SKILL.md`.
 
 **Created by:** Russ Wittmann  
 **Company:** [Silverback Marketing](https://silverbackmarketing.com)  
@@ -8,9 +8,29 @@ A Claude Cowork skill that generates a complete suite of AI readiness files for 
 
 ---
 
+## Two Ways to Use This Skill
+
+### For Claude (Cowork Desktop App)
+
+Download and install [`ai-readiness.skill`](ai-readiness.skill) — a one-click install for Claude Cowork. After installing, the skill is available immediately:
+
+```
+/ai-readiness yoursite.com
+```
+
+The `.skill` file is a Claude-native format (a packaged zip archive) that registers the skill automatically with full Claude integration — research, file generation, and workspace output all in one flow.
+
+### For ChatGPT, Gemini, Copilot, or Any Other AI
+
+Use [`SKILL.md`](SKILL.md) as a system prompt or custom instruction set. Copy the contents into your AI assistant's system prompt, custom instructions, or "memory" section. The three-phase workflow (Research → Classify → Generate) works with any AI that can browse the web and write files.
+
+> **In short:** `ai-readiness.skill` is for Claude. `SKILL.md` is for everyone else.
+
+---
+
 ## What It Does
 
-Run `/ai-readiness yoursite.com` and Claude will research the site, classify its industry, and generate 18 production-ready files that tell AI systems (ChatGPT, Claude, Gemini, Perplexity, and others) exactly what the site is, what it offers, and where to send users.
+Run `/ai-readiness yoursite.com` and the AI will research the site, classify its industry, and generate 18 production-ready files that tell AI systems (ChatGPT, Claude, Gemini, Perplexity, and others) exactly what the site is, what it offers, and where to send users.
 
 When deployed to a web root, these files improve how a site appears in AI-generated answers, summaries, and recommendations — a must-have for any business that wants to show up in the AI-driven web.
 
@@ -94,7 +114,8 @@ The [`docs/`](docs/) folder contains PDF reference guides explaining each file i
 
 ```
 ai-readiness/
-├── SKILL.md                    ← Skill definition and instructions
+├── ai-readiness.skill          ← Claude Cowork installable skill (download & open)
+├── SKILL.md                    ← Raw skill definition — works in any AI assistant
 ├── README.md                   ← This file
 ├── references/
 │   └── file-specs.md           ← Detailed specs for all 18 output files
