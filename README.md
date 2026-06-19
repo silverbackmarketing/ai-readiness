@@ -1,6 +1,6 @@
 # AI Readiness Skill
 
-A skill that generates a complete suite of AI readiness files for any website — in a single command. Works natively in **Claude Cowork** via the installable `.skill` file, and can also be used as a prompt system in **any other AI assistant** via `SKILL.md`.
+A skill that generates a complete suite of AI readiness files for any website — in a single command. Install it into Claude, Cursor, Windsurf, GitHub Copilot, Gemini, Codex, or any other AI agent with one `npx` command.
 
 **Created by:** Russ Wittmann  
 **Company:** [Silverback Marketing](https://silverbackmarketing.com)  
@@ -8,23 +8,47 @@ A skill that generates a complete suite of AI readiness files for any website �
 
 ---
 
-## Two Ways to Use This Skill
+## Install
 
-### For Claude (Cowork Desktop App)
+### Quick install (any agent) — `npx`
 
-Download and install [`ai-readiness.skill`](ai-readiness.skill) — a one-click install for Claude Cowork. After installing, the skill is available immediately:
+```bash
+# Global skill install → ~/.agents/skills/ AND ~/.claude/skills/ (default)
+npx @silverbackmarketing/ai-readiness install
 
+# AGENTS.md — the cross-agent standard (Cursor, Codex & others)
+npx @silverbackmarketing/ai-readiness install --agent agents
+
+# Both at once (recommended)
+npx @silverbackmarketing/ai-readiness install --all
 ```
-/ai-readiness yoursite.com
-```
 
-The `.skill` file is a Claude-native format (a packaged zip archive) that registers the skill automatically with full Claude integration — research, file generation, and workspace output all in one flow.
+Primary targets:
 
-### For ChatGPT, Gemini, Copilot, or Any Other AI
+| Target | Installs to |
+|---|---|
+| `skills` | `~/.agents/skills/ai-readiness/` **and** `~/.claude/skills/ai-readiness/` (full skill — `SKILL.md` + scripts + references) |
+| `agents` | `./AGENTS.md` — the standard read by Cursor, Codex, and a growing list of agents (adds a delimited block, keeps your existing content) |
+| `claude` | `~/.claude/skills/ai-readiness/` only |
 
-Use [`SKILL.md`](SKILL.md) as a system prompt or custom instruction set. Copy the contents into your AI assistant's system prompt, custom instructions, or "memory" section. The three-phase workflow (Research → Classify → Generate) works with any AI that can browse the web and write files.
+For prompt-based agents, **`AGENTS.md` is the default and recommended target** — most modern agents now read it. Tool-specific files remain available if you prefer them:
 
-> **In short:** `ai-readiness.skill` is for Claude. `SKILL.md` is for everyone else.
+| Opt-in target | Installs to |
+|---|---|
+| `cursor` | `./.cursor/rules/ai-readiness.mdc` |
+| `windsurf` | `./.windsurf/rules/ai-readiness.md` |
+| `copilot` | `./.github/copilot-instructions.md` (delimited block) |
+| `gemini` | `./GEMINI.md` (delimited block) |
+| `generic` | `./ai-readiness.SKILL.md` (paste into any system prompt) |
+
+Non-Claude targets install into the current directory, so run the command from your project root. `--all` installs Claude + `AGENTS.md`. Add `--force` to overwrite, or `--dir <path>` to change the target. Shared-file installs insert a marked block and update it in place on re-run, so they never clobber your other instructions.
+
+### Other install options
+
+- **Claude Cowork one-click:** download and open [`ai-readiness.skill`](ai-readiness.skill).
+- **Any AI, manually:** copy [`SKILL.md`](SKILL.md) into the assistant's system prompt or custom instructions.
+
+After installing, trigger it with `/ai-readiness yoursite.com` in Claude, or just ask any agent: *"create AI readiness files for yoursite.com."*
 
 ---
 
