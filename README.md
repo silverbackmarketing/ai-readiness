@@ -1,11 +1,40 @@
-<img width="1200" height="675" alt="ai-readiness-twitter-1200x675" src="https://github.com/user-attachments/assets/c8125059-913a-4b6c-a1e0-7d4e5593f239" />
+<p align="center">
+  <a href="https://ai.silverbackmarketing.com"><img src="https://ai.silverbackmarketing.com/images/ai-readiness-og.jpg" alt="AI Readiness Files — a structured kit of files that tells ChatGPT, Claude, Gemini, and Perplexity exactly who you are before they guess wrong" width="100%"></a>
+</p>
+
 # AI Readiness Skill
 
-A skill that generates a complete suite of AI readiness files for any website — in a single command. Install it into Claude, Cursor, Windsurf, GitHub Copilot, Gemini, Codex, or any other AI agent with one `npx` command.
+[![npm version](https://img.shields.io/npm/v/@silverbackmarketing/ai-readiness)](https://www.npmjs.com/package/@silverbackmarketing/ai-readiness) [![npm downloads](https://img.shields.io/npm/dm/@silverbackmarketing/ai-readiness)](https://www.npmjs.com/package/@silverbackmarketing/ai-readiness) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) [![MCP compatible](https://img.shields.io/badge/MCP-compatible-1a2c4e)](https://ai.silverbackmarketing.com/#mcp) [![Claude Skill](https://img.shields.io/badge/Claude-Skill-d97757)](https://ai.silverbackmarketing.com)
 
-**Created by:** Russ Wittmann  
-**Company:** [Silverback Marketing](https://silverbackmarketing.com)  
-**Version:** 1.0.0
+> Generate a complete suite of **AI readiness files** (GEO / generative engine optimization) for any website in a single command — `llms.txt`, `ai.txt`, schema, RAG indexes, and more. Install it into Claude, Cursor, Windsurf, GitHub Copilot, Gemini, or Codex with one `npx` command, or connect over MCP with no install.
+
+**📖 Live site & full docs:** **[ai.silverbackmarketing.com](https://ai.silverbackmarketing.com)** · ⭐ Star this repo if it helps you get found by AI.
+
+---
+
+## Why AI readiness
+
+When someone wants a product recommendation, a service provider, or a straight answer, they often ask ChatGPT, Claude, Gemini, or Perplexity **before** they ever visit a website. If you are not giving those systems clear, current signals, they guess — and they often guess wrong.
+
+AI readiness files are structured files you deploy at the root of your website to tell AI systems exactly **who you are, what you offer, and where to send people**. They speak a format AI already understands (the [llmstxt.org](https://llmstxt.org) standard, Schema.org, and emerging AI-crawler conventions), so assistants stop guessing about your brand based on stale training data and start representing you accurately in their answers.
+
+This skill researches any site, classifies its industry, and generates all of those files for you — tailored to that business — in one command.
+
+---
+
+## Contents
+
+- [Install](#install)
+- [Use via MCP (no install)](#use-via-mcp-no-install)
+- [What It Does](#what-it-does)
+- [The Files](#the-files)
+- [Usage](#usage)
+- [FAQ](#faq)
+- [Reference Documentation](#reference-documentation)
+- [PDF Guides](#pdf-guides)
+- [Skill File Structure](#skill-file-structure)
+- [Author & Company](#author--company)
+- [License](#license)
 
 ---
 
@@ -53,7 +82,7 @@ After installing, trigger it with `/ai-readiness yoursite.com` in Claude, or jus
 
 ### Use via MCP (no install)
 
-Connect your coding agent to the hosted MCP server instead of installing the skill locally. Same workflow — research a site and generate all 18 files.
+Connect your coding agent to the hosted MCP server instead of installing the skill locally. Same workflow — research a site and generate all the files.
 
 **Production:** `https://ai.silverbackmarketing.com/api/mcp`
 
@@ -61,7 +90,7 @@ Example prompts once connected:
 
 ```
 Generate AI readiness files for example.com
-Use ai-readiness to list all 18 output files
+Use ai-readiness to list all output files
 Get the file spec for llms.txt from ai-readiness
 ```
 
@@ -169,34 +198,36 @@ More client configs: [ai.silverbackmarketing.com/#mcp](https://ai.silverbackmark
 
 ## What It Does
 
-Run `/ai-readiness yoursite.com` and the AI will research the site, classify its industry, and generate 18 production-ready files that tell AI systems (ChatGPT, Claude, Gemini, Perplexity, and others) exactly what the site is, what it offers, and where to send users.
+Run `/ai-readiness yoursite.com` and the AI will research the site, classify its industry, and generate production-ready files that tell AI systems (ChatGPT, Claude, Gemini, Perplexity, and others) exactly what the site is, what it offers, and where to send users.
 
 When deployed to a web root, these files improve how a site appears in AI-generated answers, summaries, and recommendations — a must-have for any business that wants to show up in the AI-driven web.
 
 ---
 
-## The 18 Files Generated
+## The Files
 
-| # | File | Purpose |
-|---|------|---------|
-| 1 | `ai.txt` | Primary AI identity declaration |
-| 2 | `llms.txt` | Concise LLM-readable site summary |
-| 3 | `llms-full.txt` | Comprehensive LLM knowledge base |
-| 4 | `ai-sitemap.xml` | AI-optimized sitemap |
-| 5 | `sitemap.md` | Human-readable sitemap for AI context |
-| 6 | `ai-entities.json` | Structured entity definitions |
-| 7 | `ai-intent.json` | User intent and query mappings |
-| 8 | `ai-schema.json` | Schema.org structured data |
-| 9 | `rag-index.json` | RAG retrieval knowledge base |
-| 10 | `rag-index.jsonl` | JSONL format for embedding pipelines |
-| 11 | `ai-disclosure.txt` | AI content transparency statement |
-| 12 | `training-data-policy.txt` | Data usage and training policy |
-| 13 | `.well-known/ai-plugin.json` | Plugin manifest for AI agents |
-| 14 | `structured-data-guide.md` | Implementation guide for developers |
-| 15 | `manifest.json` | Web app manifest |
-| 16 | `deployment-checklist.md` | Step-by-step deployment guide |
-| 17 | `README.md` | Project documentation |
-| 18 | `robots.txt` | AI crawler directives |
+The skill generates **18 files**. Of these, **17 deploy to your web root** across 7 categories (**16** if you omit the optional `.well-known/ai-plugin.json`); the 18th, `README.md`, is project documentation for your team. This matches the [17-file kit described on the live site](https://ai.silverbackmarketing.com/#files).
+
+| # | File | Purpose | Deployed |
+|---|------|---------|:---:|
+| 1 | `ai.txt` | Primary AI identity declaration | ✅ |
+| 2 | `llms.txt` | Concise LLM-readable site summary | ✅ |
+| 3 | `llms-full.txt` | Comprehensive LLM knowledge base | ✅ |
+| 4 | `ai-sitemap.xml` | AI-optimized sitemap | ✅ |
+| 5 | `sitemap.md` | Human-readable sitemap for AI context | ✅ |
+| 6 | `ai-entities.json` | Structured entity definitions | ✅ |
+| 7 | `ai-intent.json` | User intent and query mappings | ✅ |
+| 8 | `ai-schema.json` | Schema.org structured data | ✅ |
+| 9 | `rag-index.json` | RAG retrieval knowledge base | ✅ |
+| 10 | `rag-index.jsonl` | JSONL format for embedding pipelines | ✅ |
+| 11 | `ai-disclosure.txt` | AI content transparency statement | ✅ |
+| 12 | `training-data-policy.txt` | Data usage and training policy | ✅ |
+| 13 | `.well-known/ai-plugin.json` | Plugin manifest for AI agents (optional) | ➖ |
+| 14 | `structured-data-guide.md` | Implementation guide for developers | ✅ |
+| 15 | `manifest.json` | Web app manifest | ✅ |
+| 16 | `deployment-checklist.md` | Step-by-step deployment guide | ✅ |
+| 17 | `robots.txt` | AI crawler directives | ✅ |
+| 18 | `README.md` | Project documentation (not deployed) | ➖ |
 
 ---
 
@@ -219,14 +250,66 @@ generate llms.txt for shopify.com
 Claude will:
 1. Run 10+ targeted searches to research the site
 2. Classify the site type (SaaS, e-commerce, education, healthcare, etc.)
-3. Generate all 18 files tailored to that industry
+3. Generate all files tailored to that industry
 4. Save everything to a folder named after the domain in your workspace
+
+---
+
+## FAQ
+
+**What are AI Readiness Files?**
+They are structured files you deploy at the root of your website to tell AI systems exactly who you are, what you offer, and where to send people. They speak a format AI already understands, so assistants stop guessing about your brand based on old training data.
+
+**Why does AI readiness matter now?**
+When someone wants a product recommendation, a service provider, or a straight answer, they often ask ChatGPT, Claude, Gemini, or Perplexity before they visit a website. If you are not giving those systems clear, current signals, they guess. And they often guess wrong.
+
+**How many files are in the kit?**
+The kit includes 17 purpose-built files across 7 categories: Identity & Permissions, Content Files, Map & Navigation, Intelligence Files, Research Files, Policy Files, and Operations Files. Each one helps AI understand and represent your site more accurately. (The skill generates 18 files total — the extra one is this `README.md` for your project.)
+
+**Where should I start?**
+Start with the critical files: `robots.txt`, `ai.txt`, `llms.txt`, and `llms-full.txt`. They deliver the biggest immediate impact and are what most AI systems look for first. Then add sitemaps, intelligence JSON files, policies, and operational files using the deployment checklist.
+
+**What does robots.txt do for AI?**
+robots.txt sits at the front door of your website and tells automated visitors (search engines, AI bots, and scrapers) which sections they can access. For AI readiness, it includes instructions for major crawlers like GPTBot and ClaudeBot, pointing them toward your `llms.txt` and `ai-sitemap.xml` while keeping checkout, login, and admin pages off limits.
+
+**What is ai.txt?**
+ai.txt is your brand's introduction to every AI system on the internet. Where robots.txt controls access, ai.txt goes further. It covers what you sell, what you are known for, your authoritative topics, and the rules for what AI systems can and cannot do with your content.
+
+**How is ai.txt different from robots.txt?**
+robots.txt controls access: which pages bots can crawl. ai.txt controls identity: who you are, what you offer, and your ground rules for AI use of your content. Think of robots.txt as the doorman and ai.txt as the briefing document you hand a journalist before an interview.
+
+**What is llms.txt?**
+llms.txt is a structured text file built for large language models. It gives AI a quick map of your website: company name, description, organized sections with direct links, and the most common questions your site answers. It follows the [llmstxt.org](https://llmstxt.org) standard used by ChatGPT, Claude, Gemini, and Perplexity.
+
+**What's the difference between llms.txt and llms-full.txt?**
+llms.txt is the cheat sheet: a quick summary an AI can scan in seconds. llms-full.txt is the deep dive with rich descriptions, detailed Q&A, and full category explanations. If llms.txt is a Wikipedia summary, llms-full.txt is the full article.
+
+**Why do I need an ai-sitemap.xml?**
+A regular sitemap lists pages and timestamps. The ai-sitemap adds what each page is about, its content type, and a plain-English summary. It is the difference between a paper road map and GPS with points of interest. AI crawlers can understand pages without fetching and parsing each one individually.
+
+**What is ai-intent.json?**
+ai-intent.json maps real user questions (the things people type into AI assistants) to the best page on your website to answer each one. Without it, AI guesses which page to recommend. With it, you give AI a direct URL for every common query.
+
+**What are ai-entities.json and ai-schema.json for?**
+ai-entities.json is a structured catalog of the important parts of your site: products, categories, services, and key concepts. It powers AI knowledge graphs. ai-schema.json uses the Schema.org standard to describe your organization in machine-readable format so search engines and AI systems can identify you without ambiguity.
+
+**What are the RAG index files?**
+rag-index.json and rag-index.jsonl are ready-made indexes of your site built for AI research and retrieval pipelines. When a user asks a question, AI first pulls the most relevant documents from this index before generating an answer, which keeps responses grounded in your actual content.
+
+**What is a training data policy?**
+training-data-policy.txt sets formal rules for how AI companies can use your content, including model training, RAG indexing, and commercial use. It answers a practical question every brand should decide upfront: what are others allowed to do with your work?
+
+**What is ai-disclosure.txt?**
+ai-disclosure.txt is a public transparency report explaining how your organization uses AI, whether for content generation, recommendations, or customer interactions. It builds trust by answering those questions before someone has to ask.
+
+**How often should I update my AI readiness files?**
+It depends on the file. Update `llms.txt` and sitemaps monthly or when your site structure changes. Refresh `ai.txt` and `llms-full.txt` quarterly or when products change. Review policy files annually. The `manifest.json` file lists recommended update frequencies for every file in the kit.
 
 ---
 
 ## Reference Documentation
 
-The [`references/file-specs.md`](references/file-specs.md) file contains the detailed specification for each of the 18 files — required structure, key fields, and condensed examples. It is loaded automatically when the skill runs.
+The [`references/file-specs.md`](references/file-specs.md) file contains the detailed specification for each file — required structure, key fields, and condensed examples. It is loaded automatically when the skill runs.
 
 The [`scripts/gen_jsonl.py`](scripts/gen_jsonl.py) utility converts `rag-index.json` to `rag-index.jsonl` format for use with embedding pipelines:
 
@@ -257,7 +340,7 @@ ai-readiness/
 ├── SKILL.md                    ← Raw skill definition — works in any AI assistant
 ├── README.md                   ← This file
 ├── references/
-│   └── file-specs.md           ← Detailed specs for all 18 output files
+│   └── file-specs.md           ← Detailed specs for all output files
 ├── scripts/
 │   └── gen_jsonl.py            ← JSONL generator utility
 └── docs/
@@ -269,14 +352,17 @@ ai-readiness/
 
 ---
 
-## About Silverback Marketing
+## Author & Company
 
-Silverback Marketing is a full-service digital marketing agency helping businesses grow through strategy, content, and technology. This skill was built as part of Silverback's AI-readiness service offering — helping clients get found in the age of AI search.
+**Russ Wittmann** — SVP of Technology, Silverback Marketing
+[LinkedIn](https://www.linkedin.com/in/russwittmann/) · [X / Twitter](https://x.com/russwittmann)
 
-[silverbackmarketing.com](https://silverbackmarketing.com)
+[Silverback Marketing](https://silverbackmarketing.com) is an ROI-focused digital marketing agency (founded 2007, Queen Creek, Arizona) helping businesses grow through strategy, content, and technology. This skill was built as part of Silverback's AI-readiness service offering — helping clients get found in the age of AI search.
+
+🔗 **[ai.silverbackmarketing.com](https://ai.silverbackmarketing.com)** · [silverbackmarketing.com](https://silverbackmarketing.com)
 
 ---
 
 ## License
 
-MIT — free to use, modify, and distribute with attribution.
+MIT — free to use, modify, and distribute with attribution. See [`LICENSE`](LICENSE).
