@@ -50,6 +50,120 @@ Non-Claude targets install into the current directory, so run the command from y
 
 After installing, trigger it with `/ai-readiness yoursite.com` in Claude, or just ask any agent: *"create AI readiness files for yoursite.com."*
 
+### Use via MCP (no install)
+
+Connect your coding agent to the hosted MCP server instead of installing the skill locally. Same workflow — research a site and generate all 18 files.
+
+**Production:** `https://ai.silverbackmarketing.com/api/mcp`
+
+Example prompts once connected:
+
+```
+Generate AI readiness files for example.com
+Use ai-readiness to list all 18 output files
+Get the file spec for llms.txt from ai-readiness
+```
+
+**Cursor** — add to `.cursor/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "ai-readiness": {
+      "url": "https://ai.silverbackmarketing.com/api/mcp"
+    }
+  }
+}
+```
+
+Refresh MCP servers, then ask: *"Use ai-readiness to generate files for example.com"*
+
+**Claude Code** — add `.mcp.json` to your project root:
+
+```json
+{
+  "mcpServers": {
+    "ai-readiness": {
+      "type": "http",
+      "url": "https://ai.silverbackmarketing.com/api/mcp"
+    }
+  }
+}
+```
+
+Or run:
+
+```bash
+claude mcp add --transport http ai-readiness https://ai.silverbackmarketing.com/api/mcp
+```
+
+Restart the session, run `/mcp`, then ask: *"Generate AI readiness files for mysite.com using ai-readiness"*
+
+**VS Code / Copilot** — add to `.vscode/mcp.json`:
+
+```json
+{
+  "servers": {
+    "ai-readiness": {
+      "type": "http",
+      "url": "https://ai.silverbackmarketing.com/api/mcp"
+    }
+  }
+}
+```
+
+Open **MCP: List Servers**, confirm `ai-readiness` is running, then use agent mode in Copilot Chat.
+
+**Claude Desktop** — use [mcp-remote](https://www.npmjs.com/package/mcp-remote) in `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS):
+
+```json
+{
+  "mcpServers": {
+    "ai-readiness": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://ai.silverbackmarketing.com/api/mcp"]
+    }
+  }
+}
+```
+
+Fully quit and reopen Claude Desktop after saving.
+
+**OpenAI Codex** — add to `~/.codex/config.toml`:
+
+```toml
+[mcp_servers.ai-readiness]
+url = "https://ai.silverbackmarketing.com/api/mcp"
+enabled = true
+```
+
+Or run `codex mcp add ai-readiness --url https://ai.silverbackmarketing.com/api/mcp`, then `/mcp` in a session.
+
+**Antigravity** — Agent panel → … → MCP Servers → Manage → View raw config:
+
+```json
+{
+  "mcpServers": {
+    "ai-readiness": {
+      "serverUrl": "https://ai.silverbackmarketing.com/api/mcp"
+    }
+  }
+}
+```
+
+Antigravity uses `serverUrl` (not `url`). Save, refresh, then try in agent mode.
+
+**Quick test:**
+
+```bash
+curl -X POST 'https://ai.silverbackmarketing.com/api/mcp' \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json, text/event-stream' \
+  -d '{"jsonrpc":"2.0","method":"tools/list","params":{},"id":1}'
+```
+
+More client configs: [ai.silverbackmarketing.com/#mcp](https://ai.silverbackmarketing.com/#mcp)
+
 ---
 
 ## What It Does
