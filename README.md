@@ -1,3 +1,4 @@
+<img width="1200" height="675" alt="ai-readiness-twitter-1200x675" src="https://github.com/user-attachments/assets/c8125059-913a-4b6c-a1e0-7d4e5593f239" />
 # AI Readiness Skill
 
 A skill that generates a complete suite of AI readiness files for any website — in a single command. Install it into Claude, Cursor, Windsurf, GitHub Copilot, Gemini, Codex, or any other AI agent with one `npx` command.
