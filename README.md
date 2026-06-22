@@ -12,6 +12,12 @@
 
 ---
 
+## What is the AI Readiness Kit?
+
+The AI Readiness Kit is a free, open-source set of **17 structured files you deploy at the root of your website** — `robots.txt`, `ai.txt`, `llms.txt`, schema, RAG indexes, and more — that tell ChatGPT, Claude, Gemini, and Perplexity exactly who you are, what you offer, and how to represent you. Generate the whole set, tailored to any site, with a single command. Free forever (MIT); install with `npx` or run it over MCP with no install.
+
+---
+
 ## Why AI readiness
 
 When someone wants a product recommendation, a service provider, or a straight answer, they often ask ChatGPT, Claude, Gemini, or Perplexity **before** they ever visit a website. If you are not giving those systems clear, current signals, they guess — and they often guess wrong.
