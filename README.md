@@ -4,11 +4,17 @@
 
 # AI Readiness Skill
 
-[![npm version](https://img.shields.io/npm/v/@silverbackmarketing/ai-readiness)](https://www.npmjs.com/package/@silverbackmarketing/ai-readiness) [![npm downloads](https://img.shields.io/npm/dm/@silverbackmarketing/ai-readiness)](https://www.npmjs.com/package/@silverbackmarketing/ai-readiness) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) [![MCP compatible](https://img.shields.io/badge/MCP-compatible-1a2c4e)](https://ai.silverbackmarketing.com/#mcp) [![Claude Skill](https://img.shields.io/badge/Claude-Skill-d97757)](https://ai.silverbackmarketing.com)
+[![npm version](https://img.shields.io/npm/v/@silverbackmarketing/ai-readiness)](https://www.npmjs.com/package/@silverbackmarketing/ai-readiness) [![npm downloads](https://img.shields.io/npm/dm/@silverbackmarketing/ai-readiness)](https://www.npmjs.com/package/@silverbackmarketing/ai-readiness) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) [![MCP compatible](https://img.shields.io/badge/MCP-compatible-1a2c4e)](https://ai.silverbackmarketing.com/#mcp) [![Claude Skill](https://img.shields.io/badge/Claude-Skill-d97757)](https://ai.silverbackmarketing.com) [![Cursor compatible](https://img.shields.io/badge/Cursor-compatible-000000)](#use-via-mcp-no-install) [![OpenAI Codex compatible](https://img.shields.io/badge/OpenAI_Codex-compatible-412991)](#use-via-mcp-no-install) [![Perplexity compatible](https://img.shields.io/badge/Perplexity-compatible-20808D)](#use-via-mcp-no-install)
+
+[![Optimizes for AI search](https://img.shields.io/badge/Optimizes_for-ChatGPT·Claude·Gemini·Perplexity-20808D)](https://ai.silverbackmarketing.com)
 
 > Generate a complete suite of **AI readiness files** (GEO / generative engine optimization) for any website in a single command — `llms.txt`, `ai.txt`, schema, RAG indexes, and more. Install it into Claude, Cursor, Windsurf, GitHub Copilot, Gemini, or Codex with one `npx` command, or connect over MCP with no install.
 
 **📖 Live site & full docs:** **[ai.silverbackmarketing.com](https://ai.silverbackmarketing.com)** · ⭐ Star this repo if it helps you get found by AI.
+
+<p align="center">
+  <a href="https://www.producthunt.com/products/ai-readiness-kit?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-ai-readiness-kit" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1178266&theme=light" alt="AI Readiness Kit - The 17 files that make your site understandable to AI | Product Hunt" width="250" height="54"></a>
+</p>
 
 ---
 
@@ -189,6 +195,21 @@ Or run `codex mcp add ai-readiness --url https://ai.silverbackmarketing.com/api/
 
 Antigravity uses `serverUrl` (not `url`). Save, refresh, then try in agent mode.
 
+**Perplexity** — two ways to use the kit:
+
+- **Via remote MCP connector** — *requires a paid Perplexity plan; an org admin may first need to enable "Allow members to add custom connectors."* Go to **Account settings → [Connectors](https://www.perplexity.ai/account/connectors)** → click **+ Custom connector** (top-right) → select **Remote**, then fill in:
+
+  | Field | Value |
+  |---|---|
+  | **Name** | `AI Readiness` |
+  | **MCP Server URL** | `https://ai.silverbackmarketing.com/api/mcp` |
+  | **Authentication** | `None` |
+  | **Transport** | `Streamable HTTP` |
+
+  Check the acknowledgement box, click **Add**, then click the connector card to enable it. Ask: *"Use ai-readiness to generate files for example.com."* (Full steps: Perplexity's [Adding Custom Remote Connectors](https://www.perplexity.ai/help-center/en/articles/13915507-adding-custom-remote-connectors) guide.)
+
+- **Manual — free, works on any plan:** paste [`SKILL.md`](SKILL.md) into a thread (or attach it), then ask: *"Using these AI readiness instructions, generate AI readiness files for example.com."*
+
 **Quick test:**
 
 ```bash
@@ -263,6 +284,8 @@ Claude will:
 
 ## FAQ
 
+### Getting Started
+
 **What are AI Readiness Files?**
 They are structured files you deploy at the root of your website to tell AI systems exactly who you are, what you offer, and where to send people. They speak a format AI already understands, so assistants stop guessing about your brand based on old training data.
 
@@ -275,6 +298,8 @@ The kit includes 17 purpose-built files across 7 categories: Identity & Permissi
 **Where should I start?**
 Start with the critical files: `robots.txt`, `ai.txt`, `llms.txt`, and `llms-full.txt`. They deliver the biggest immediate impact and are what most AI systems look for first. Then add sitemaps, intelligence JSON files, policies, and operational files using the deployment checklist.
 
+### Identity & Permissions
+
 **What does robots.txt do for AI?**
 robots.txt sits at the front door of your website and tells automated visitors (search engines, AI bots, and scrapers) which sections they can access. For AI readiness, it includes instructions for major crawlers like GPTBot and ClaudeBot, pointing them toward your `llms.txt` and `ai-sitemap.xml` while keeping checkout, login, and admin pages off limits.
 
@@ -283,6 +308,8 @@ ai.txt is your brand's introduction to every AI system on the internet. Where ro
 
 **How is ai.txt different from robots.txt?**
 robots.txt controls access: which pages bots can crawl. ai.txt controls identity: who you are, what you offer, and your ground rules for AI use of your content. Think of robots.txt as the doorman and ai.txt as the briefing document you hand a journalist before an interview.
+
+### Content & Navigation
 
 **What is llms.txt?**
 llms.txt is a structured text file built for large language models. It gives AI a quick map of your website: company name, description, organized sections with direct links, and the most common questions your site answers. It follows the [llmstxt.org](https://llmstxt.org) standard used by ChatGPT, Claude, Gemini, and Perplexity.
@@ -293,6 +320,8 @@ llms.txt is the cheat sheet: a quick summary an AI can scan in seconds. llms-ful
 **Why do I need an ai-sitemap.xml?**
 A regular sitemap lists pages and timestamps. The ai-sitemap adds what each page is about, its content type, and a plain-English summary. It is the difference between a paper road map and GPS with points of interest. AI crawlers can understand pages without fetching and parsing each one individually.
 
+### Intelligence & Research
+
 **What is ai-intent.json?**
 ai-intent.json maps real user questions (the things people type into AI assistants) to the best page on your website to answer each one. Without it, AI guesses which page to recommend. With it, you give AI a direct URL for every common query.
 
@@ -301,6 +330,8 @@ ai-entities.json is a structured catalog of the important parts of your site: pr
 
 **What are the RAG index files?**
 rag-index.json and rag-index.jsonl are ready-made indexes of your site built for AI research and retrieval pipelines. When a user asks a question, AI first pulls the most relevant documents from this index before generating an answer, which keeps responses grounded in your actual content.
+
+### Policies & Maintenance
 
 **What is a training data policy?**
 training-data-policy.txt sets formal rules for how AI companies can use your content, including model training, RAG indexing, and commercial use. It answers a practical question every brand should decide upfront: what are others allowed to do with your work?
