@@ -394,7 +394,7 @@ ai-readiness/
 **Russ Wittmann** — SVP of Technology, Silverback Marketing
 [LinkedIn](https://www.linkedin.com/in/russwittmann/) · [X / Twitter](https://x.com/russwittmann)
 
-[Silverback Marketing](https://silverbackmarketing.com) is an ROI-focused digital marketing agency (founded 2007, Queen Creek, Arizona) helping businesses grow through strategy, content, and technology. This skill was built as part of Silverback's AI-readiness service offering — helping clients get found in the age of AI search.
+[Silverback Marketing](https://silverbackmarketing.com) of Queen Creek, Arizona is an ROI-focused digital marketing agency (founded 2007) helping businesses grow through strategy, content, and technology. This skill was built as part of Silverback's AI-readiness service offering: helping clients get found in the age of AI search.
 
 🔗 **[ai.silverbackmarketing.com](https://ai.silverbackmarketing.com)** · [silverbackmarketing.com](https://silverbackmarketing.com)
 
