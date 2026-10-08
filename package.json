@@ -1,0 +1,47 @@
+{
+  "name": "@silverbackmarketing/ai-readiness",
+  "version": "1.0.4",
+  "description": "Install the AI readiness skill (generates llms.txt, ai.txt, schema, RAG index, and more for any website) into Claude / Cowork via npx.",
+  "type": "module",
+  "bin": {
+    "ai-readiness": "bin/cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "SKILL.md",
+    "scripts/",
+    "references/",
+    "README.md"
+  ],
+  "keywords": [
+    "ai",
+    "llms.txt",
+    "ai.txt",
+    "schema-org",
+    "json-ld",
+    "seo",
+    "geo",
+    "llm",
+    "rag",
+    "claude",
+    "claude-skill",
+    "ai-readiness"
+  ],
+  "author": "Russ Wittmann <russ.wittmann@gmail.com>",
+  "homepage": "https://ai.silverbackmarketing.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silverbackmarketing/ai-readiness.git"
+  },
+  "bugs": {
+    "url": "https://github.com/silverbackmarketing/ai-readiness/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "node bin/cli.js --help"
+  }
+}
