@@ -301,7 +301,7 @@ Start with the critical files: `robots.txt`, `ai.txt`, `llms.txt`, and `llms-ful
 ### Identity & Permissions
 
 **What does robots.txt do for AI?**
-robots.txt sits at the front door of your website and tells automated visitors (search engines, AI bots, and scrapers) which sections they can access. For AI readiness, it includes instructions for major crawlers like GPTBot and ClaudeBot, pointing them toward your `llms.txt` and `ai-sitemap.xml` while keeping checkout, login, and admin pages off limits.
+robots.txt sits at the front door of your website and tells automated visitors (search engines, AI bots, and scrapers) which sections they can access. For AI readiness, it includes instructions for major crawlers like GPTBot, OAI-SearchBot, ClaudeBot, Claude-SearchBot, PerplexityBot, and Bingbot, pointing them toward your `llms.txt` and `ai-sitemap.xml` while keeping checkout, login, and admin pages off limits.
 
 **What is ai.txt?**
 ai.txt is your brand's introduction to every AI system on the internet. Where robots.txt controls access, ai.txt goes further. It covers what you sell, what you are known for, your authoritative topics, and the rules for what AI systems can and cannot do with your content.

@@ -29,6 +29,9 @@ User-agent: GPTBot
 Allow: /
 Allow: /llms.txt
 ...
+[Repeat for every crawler in the §18 robots.txt table — OAI-SearchBot, ClaudeBot,
+Claude-SearchBot, Claude-Web, anthropic-ai, Google-Extended, PerplexityBot, Bingbot,
+Applebot-Extended, meta-externalagent, FacebookBot, CCBot — using the same per-crawler block]
 
 ## BRAND IDENTITY
 Name: [Full legal/brand name]
@@ -587,7 +590,39 @@ Use checkboxes `- [ ]` for all action items. End with a maintenance schedule tab
 standard sitemap reference. The real file must be *merged* into the live robots.txt —
 this is a reference, not a replacement.
 
-**AI crawlers to include:** GPTBot, ClaudeBot, Google-Extended, PerplexityBot, FacebookBot, CCBot
+**AI crawlers to include** (one `User-agent` block each, in this order):
+
+| User-agent | Operator | Role | Allow list |
+|---|---|---|---|
+| `GPTBot` | OpenAI | Training and retrieval crawler | Full AI-file allow list |
+| `OAI-SearchBot` | OpenAI | ChatGPT search / citations (not used for training) | Full AI-file allow list |
+| `ClaudeBot` | Anthropic | General crawler | Full AI-file allow list |
+| `Claude-SearchBot` | Anthropic | Claude search indexing / citations (not used for training) | Full AI-file allow list |
+| `Claude-Web` | Anthropic | Fetches pages referenced in live conversations (older name for Claude-User) | Full AI-file allow list |
+| `anthropic-ai` | Anthropic | Other Anthropic product crawling | Full AI-file allow list |
+| `Google-Extended` | Google | Gemini training / grounding opt-in token | Full AI-file allow list |
+| `PerplexityBot` | Perplexity | Perplexity search index | Full AI-file allow list |
+| `Bingbot` | Microsoft | Bing index, which grounds ChatGPT search and Microsoft Copilot | Full AI-file allow list |
+| `Applebot-Extended` | Apple | Apple Intelligence training opt-in signal | Full AI-file allow list |
+| `meta-externalagent` | Meta | Meta's AI training crawler | Full AI-file allow list |
+| `FacebookBot` | Meta | Meta AI crawling (legacy name) | `Allow: /` only |
+| `CCBot` | Common Crawl | Open web corpus used by many model trainers | `Allow: /` only, plus `/ai-sitemap.xml` |
+
+**Rules:**
+
+1. **All thirteen, always.** Every generated robots.txt gets a `User-agent:` block for each,
+   and ai.txt's `## AI CRAWLER PERMISSIONS` section covers at minimum every "full allow
+   list" crawler above.
+2. **Peers get identical Allow lists.** Every "full allow list" crawler gets the same
+   Allow lines. Don't shortchange one relative to another.
+3. **Site-specific Disallow lines** (login, admin, checkout) repeat in every crawler block,
+   matching the `User-agent: *` block.
+4. **Carry forward existing rules.** If the live robots.txt already blocks a crawler the
+   site owner chose to block (e.g., SemrushBot), keep that block. This list adds; it
+   doesn't remove owner decisions.
+5. **Search bots get cited.** `OAI-SearchBot`, `Claude-SearchBot`, `PerplexityBot`, and
+   `Bingbot` are what get a site *cited* in AI answers. Always allow them, even if the
+   site owner chooses to restrict the training crawlers.
 
 **For each crawler:**
 ```
