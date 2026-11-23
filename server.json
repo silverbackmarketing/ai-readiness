@@ -1,0 +1,24 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.silverbackmarketing/ai-readiness",
+  "title": "AI Readiness Kit",
+  "description": "Generate 18 AI readiness files (llms.txt, ai.txt, RAG indexes, schema) for any website.",
+  "version": "1.0.1",
+  "websiteUrl": "https://ai.silverbackmarketing.com",
+  "repository": {
+    "url": "https://github.com/silverbackmarketing/ai-readiness",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://ai.silverbackmarketing.com/images/ai-readiness-logo.png",
+      "mimeType": "image/png"
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://ai.silverbackmarketing.com/api/mcp"
+    }
+  ]
+}
